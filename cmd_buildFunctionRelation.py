@@ -5,7 +5,7 @@ import io
 
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
 
-def loadJson(file_path):
+def load_json(file_path):
     try:
         with open(file_path, 'r', encoding='utf-8') as file:
             return json.load(file)
@@ -89,7 +89,7 @@ def flattern_iterator(src_structure):
                 yield [f"{file}.c-{class_name}.s-{static_method_name}", static_method_def['body']]
 
 def main(input_path, arg_keyword, output_path):
-    src_structure = loadJson(input_path)
+    src_structure = load_json(input_path)
 
     # Data structure of internal keyword
     #   "file",
